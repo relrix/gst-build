@@ -6,6 +6,20 @@ project('All GStreamer modules', 'c',
 gst_version = '>= @0@'.format(meson.project_version())
 gst_branch = 'master'
 
+warning('''
+
+======================================================================================================
+
+  gst-build is now obsolete and has now been moved into the GStreamer monorepo, see
+
+    https://gstreamer.freedesktop.org/documentation/frequently-asked-questions/mono-repository.html
+
+  for more details.
+
+======================================================================================================
+
+''')
+
 build_system = build_machine.system()
 cc = meson.get_compiler('c')
 
@@ -388,3 +402,17 @@ run_target('update', command : [update,
 if orc_subproject.found() and orc_update_targets.length() > 0
   alias_target('update-orc-dist', orc_update_targets)
 endif
+
+warning('''
+
+======================================================================================================
+
+  gst-build is now obsolete and has now been moved into the GStreamer monorepo, see
+
+    https://gstreamer.freedesktop.org/documentation/frequently-asked-questions/mono-repository.html
+
+  for more details.
+
+======================================================================================================
+
+''')
